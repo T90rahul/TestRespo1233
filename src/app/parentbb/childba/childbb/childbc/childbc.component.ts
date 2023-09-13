@@ -7,15 +7,15 @@ import { ProductService } from 'src/app/product.service';
   styleUrls: ['./childbc.component.css'],
 })
 export class ChildbcComponent {
-  title = 'child bc working';
-  receivedData = [];
+  receivedData: any = [];
   constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
-    this.receivedData = this.productService.getSharedData();
-    console.log(this.receivedData);
-    if (this.receivedData.length > 0) {
-      console.log('XXX', (this.title = 'xxx'));
-    }
+    this.productService.getSharedData().subscribe((data) => {
+      this.receivedData = data;
+      console.log(this.receivedData);
+      if (this.receivedData.length > 0) {
+      }
+    });
   }
 }

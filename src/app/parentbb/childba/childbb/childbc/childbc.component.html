@@ -1,2 +1,22 @@
-<p>{{title}}</p>
-<!-- <app-childba></app-childba> -->
+
+<div>
+    <h1>Data Table Sorted in desc</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Customer Name</th>
+                <th>Email</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of receivedData">
+                <th>{{ item.id }}</th>
+                <td>{{ item.firstName }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.age }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -7,7 +7,7 @@ import { Subject } from 'rxjs';
   providedIn: 'root',
 })
 export class ProductService {
-  private sharedData: any;
+  private sharedData = new Subject();
 
   private apiUrl =
     'https://hub.dummyapis.com/employee?noofRecords=10&idStarts=1001'; // Replace with your API URL
@@ -35,7 +35,7 @@ export class ProductService {
 
   // Setter method to set the shared data
   setSharedData(data: any) {
-    this.sharedData = data;
+    this.sharedData.next(data);
   }
 
   // Getter method to get the shared data
